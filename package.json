@@ -1,0 +1,34 @@
+{
+  "name": "hashtag",
+  "version": "0.0.1",
+  "main": "dist/hashtag.js",
+  "author": "Peaceful Truth <truthpeaceful@gmail.com>",
+  "license": "MIT",
+  "repository": "github:peacefultruth/hashtag",
+  "scripts": {
+    "es6": "babel-node --",
+    "test": "NODE_ENV='test' jest",
+    "test:debug:wait": "NODE_ENV='test' node --inspect-brk node_modules/.bin/jest --runInBand --no-cache",
+    "dist:source-maps": "babel src --source-maps inline --out-dir dist --ignore '**/?(*.)+(spec|test|unit).js?(x)'",
+    "dist": "babel src --out-dir dist --ignore '**/?(*.)+(spec|test|unit)?(.*).js?(x)'",
+    "dist:prod": "BABEL_ENV=production babel src --out-dir dist --ignore '**/?(*.)+(spec|test|unit)?(.*).js?(x)'",
+    "watch": "onchange '**/*.js' -- prettier --write {{changed}}",
+    "start": "node dist/index.js"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.8.4",
+    "@babel/core": "^7.8.7",
+    "@babel/node": "^7.8.7",
+    "@babel/plugin-proposal-class-properties": "^7.8.3",
+    "@babel/plugin-proposal-object-rest-spread": "^7.8.3",
+    "@babel/preset-env": "^7.8.7",
+    "@babel/preset-typescript": "^7.8.3",
+    "babel-core": "7.0.0-bridge.0",
+    "babel-jest": "^25.1.0",
+    "babel-loader": "^8.0.0-beta",
+    "babel-preset-minify": "^0.5.1",
+    "jest": "^25.1.0",
+    "onchange": "^6.1.0",
+    "prettier": "^1.19.1"
+  }
+}
